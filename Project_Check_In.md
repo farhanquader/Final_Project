@@ -18,3 +18,22 @@
 
 
 ## Information Structure
+
+
+
+
+
+
+
+
+
+## Component Access
+
+
+
+
+
+
+
+
+
