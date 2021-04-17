@@ -38,7 +38,8 @@ Class Collection_Birds:
          ValueError: If duplicate.
      """
 
-
+if __name__ == "__main__":
+    main()
 
 
 
