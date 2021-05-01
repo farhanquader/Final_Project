@@ -6,7 +6,7 @@ class Bird:
         self.col = col
         self.type_of = type_of
         self.picture_taken = False
-
+        
     def picture(self):
         self.picture_taken = True
 
@@ -75,7 +75,13 @@ class Person:
         else:
             print("You are out of film.")
 
-
+if __name__ == "__main__":
+    coordinates = Coordinates(10, 10, 15)
+    person = Person("Farhan", 10)
+    while person.has_film():
+        row = int(input("Enter row: "))
+        col = int(input("Enter col: "))
+        person.snap_picture(row, col, coordinates)
 
 """class Collection_Birds:
     def __init(self, new_bird, new_coordinate):
