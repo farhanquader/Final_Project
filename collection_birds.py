@@ -6,7 +6,7 @@ class Bird:
         self.col = col
         self.type_of = type_of
         self.picture_taken = False
-        
+
     def picture(self):
         self.picture_taken = True
 
@@ -16,8 +16,9 @@ class Coordinates:
         self.width = width
         self.num_of_birds = num_of_birds
         if (height * width) < num_of_birds:
-            self.num_of_birds = (height * width) / 2
+            self.num_of_birds = (height * width) // 2
         self.birds = []
+        self.populate_birds()
 
     def has_bird_in_location(self, row, col):
         for bird in self.birds:
@@ -44,6 +45,7 @@ class Coordinates:
                     bird = Bird(row, col, type_of)
                     self.birds.append(bird)
                     is_bird_added = True
+            i += 1
 
     def snap_picture_at(self, row, col):
         for bird in self.birds:
@@ -76,7 +78,7 @@ class Person:
             print("You are out of film.")
 
 if __name__ == "__main__":
-    coordinates = Coordinates(10, 10, 15)
+    coordinates = Coordinates(6, 5, 100)
     person = Person("Farhan", 10)
     while person.has_film():
         row = int(input("Enter row: "))
