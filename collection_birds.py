@@ -12,6 +12,8 @@ class Bird:
 
 class Coordinates:
     def __init__(self, height, width, num_of_birds):
+        """"The constructor for the hypothetical map being used in the program.
+            This Coordinates object will be called upon when creating a map"""
         self.height = height
         self.width = width
         self.num_of_birds = num_of_birds
@@ -27,6 +29,7 @@ class Coordinates:
         return False
 
     def populate_birds(self):
+        """This function serves as a randomizer to place birds in certain locations of the map"""
         for i in range(self.num_of_birds):
             is_bird_added = False
             while is_bird_added == False:
@@ -56,6 +59,8 @@ class Coordinates:
 
 class Person:
     def __init__(self, name, film):
+        """This creates the designated user with said name and amount of film.
+            The constructor also provides the user's number of birds' photos taken"""
         self.name = name
         self.birds_snapped = []
         self.film = film
@@ -78,6 +83,8 @@ class Person:
             print("You are out of film.")
 
 if __name__ == "__main__":
+    """This main method gives a good test/outlook of how the program
+        should run normally."""
     coordinates = Coordinates(6, 5, 100)
     person = Person("Farhan", 10)
     while person.has_film():
