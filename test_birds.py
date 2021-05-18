@@ -3,7 +3,18 @@ import random
 
 import collection_birds as coll
 
-RANDOM_SEED = 1
+RANDOM_SEED = 0
+
+def random_bird():
+    """Randomly select a bird from a list."""
+    birds = ["penguin", "ostrich", "falcon", "robin"]
+    return random.choice(birds)
+
+def test_random_bird():
+    random.seed(RANDOM_SEED)
+    choices = [random_bird() for i in range(4)]
+    assert choices == ["penguin", "penguin", "falcon", "robin"]
+
 
 @fixture
 def pseudorandom_sequence(self):
